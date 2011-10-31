@@ -37,3 +37,9 @@ A more complex example:
 Which is equivelant to:
 
 	$('h1 + p').nextUntil('h1, h2').andSelf();
+
+### If you're crazy
+
+Hell, this thing could be used for anything really. It was made with a specific purpose in mind (above), but if you're willing:
+
+    body $:empty$:prepend <h1>Yo.</h1><p>...</p>
