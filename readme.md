@@ -12,4 +12,28 @@ You could do:
 
 ### WTF?
 
-Why would you want to use this? I dunno. For me, it was a necessity because I needed to be able to select complex nodes and I needed to specify the selector to do so in a JSON format. What I needed to select wasn't possible with regular CSS (even CSS3) selectors. I needed to be able to define a single string which would represent the location of these nodes. 
+Why would you want to use this? I dunno. For me, it was a necessity because I needed to be able to select complex nodes and I needed to specify the selector to do so in a JSON file.
+
+What I needed to select wasn't possible with regular CSS (even CSS3) selectors. I needed to be able to define a single string which would represent the location of these nodes. 
+
+### Usage:
+
+The format of the macro-selector is as follows:
+
+	[$:JQ_METHOD ][CSS_SELECTOR]
+
+Both are optional, and this format can occur one or more times.
+
+If the JS_METHOD isn't specified, then the default of `$(document).find()` will be used -- this'll only occur if you start your macro-selector with a CSS selector instead of a method call.
+
+If you don't specify a CSS_SELECTOR then the specified JQ_METHOD is called with no arguments.
+
+**Note**: The CSS_SELECTOR doesn't have to actually be a CSS selector. Anything that does not match the $:METHOD format will simply be passed to the previous method. So `div $:eq 0` will work fine.
+
+A more complex example:
+
+	$.macroSelect('h1 + p $:nextUntil h1, h2 $:andSelf');
+
+Which is equivelant to:
+
+	$('h1 + p').nextUntil('h1, h2').andSelf();
