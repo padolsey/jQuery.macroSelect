@@ -24,15 +24,15 @@ The format of the macro-selector is as follows:
 
 Both are optional, and this format can occur one or more times.
 
-If the JS_METHOD isn't specified, then the default of `$(document).find()` will be used -- this'll only occur if you start your macro-selector with a CSS selector instead of a method call.
+If the JQ_METHOD isn't specified, then the default of `$(document).find()` will be used -- this'll only occur if you start your macro-selector with a CSS selector instead of a method call -- which is the norm.
 
-If you don't specify a CSS_SELECTOR then the specified JQ_METHOD is called with no arguments.
+If you don't specify a CSS_SELECTOR then the specified JQ_METHOD is called with no arguments. E.g. `div $:children` (no arguments passed to `$.fn.children`).
 
 **Note**: The CSS_SELECTOR doesn't have to actually be a CSS selector. Anything that does not match the $:METHOD format will simply be passed to the previous method. So `div $:eq 0` will work fine.
 
 A more complex example:
 
-	$.macroSelect('h1 + p $:nextUntil h1, h2 $:andSelf');
+	h1 + p $:nextUntil h1, h2 $:andSelf'
 
 Which is equivelant to:
 
