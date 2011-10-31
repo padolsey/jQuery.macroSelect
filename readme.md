@@ -42,4 +42,4 @@ Which is equivelant to:
 
 Hell, this thing could be used for anything really. It was made with a specific purpose in mind (above), but if you're willing:
 
-    body $:empty$:prepend <h1>Yo.</h1><p>...</p>
+    body $:empty $:prepend <h1>Yo.</h1><p>...</p>
