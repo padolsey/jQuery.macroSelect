@@ -9,9 +9,8 @@
 
 jQuery.macroSelect = function(selector) {
 
-	var $ = jQuery,
-		rMethod = /^\$:/,
-		cur = $(document),
+	var rMethod = /^\$:/,
+		cur = jQuery(document),
 		m = selector.match(/\$:[\w+$]+|.+?(?=\$:|$)/g),
 		m0, m1;
 
@@ -42,8 +41,6 @@ jQuery.macroSelect = function(selector) {
 
 	}
 
-	cur = $.unique(cur);
-
-	return cur;
+	return $.unique(cur);
 
 };
