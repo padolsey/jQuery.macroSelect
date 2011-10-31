@@ -1,6 +1,6 @@
 ## jQuery.macroSelect
 
-`jQuery.macroSelect` is a small plugin that takes one String argument and returns a selection, much like `jQuery(...)`. The only difference is that the String that `jQuery.macroSelect` accepts is a hybrid between a CSS selector and a jQuery method chain.
+`jQuery.macroSelect` is a small plugin that takes one String argument and returns a selection (a jQuery instance), much like `jQuery(...)`. The only difference is that the String that `jQuery.macroSelect` accepts is a hybrid between a CSS selector and a jQuery method chain.
 
 So, instead of:
 
@@ -32,7 +32,7 @@ If you don't specify a CSS_SELECTOR then the specified JQ_METHOD is called with 
 
 A more complex example:
 
-	h1 + p $:nextUntil h1, h2 $:andSelf'
+	h1 + p $:nextUntil h1, h2 $:andSelf
 
 Which is equivelant to:
 
